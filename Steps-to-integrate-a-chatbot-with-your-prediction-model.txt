@@ -1,0 +1,16 @@
+Steps to integrate a Chatbot with your prediction model:
+---------------------------------------------------------
+
+1. Built encoders and decoders while predicting hindi text from english input
+2. Loaded these encoders, decoders, tokenizers and generated padded sequences in a python module. This module also contains the prediction
+(decode_sentence) function.
+3. Saved this as a module.
+4. Loaded this module which loaded the model corresponding to Step 2. 
+5. Used Flask to associate a web service to this model.
+6. In Slack, I created a team space. 
+7. I went to slack app api link, I created a slack app - eng-to-hindi-translation.
+8. But to communicate with my model, the app needed a public url. Slash command will be used to trigger the communication between slack
+and your web service. 
+9. I downloaded ngrok software to map a public url to the flask web service that I started in Step 5.
+10. In the slash command, I have given the forwarding url (public url) details.
+11. In Slack team space,I called the model using the slash command (/engtohindi) and it returned the hindi text to me. 
